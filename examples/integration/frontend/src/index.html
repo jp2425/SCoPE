@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="style/main.css"
+  />
+ 
+    <script src='js/main.js'></script>
+</head>
+<body>
+
+        <div class="container" style="text-align: center; margin-top: 5%; height: 100%;">
+            <h1>SCoPE</h1>
+            This is a webpage to show how SCoPE can be integrated into other solutions. Type below the code (C/C++) to be processed.
+           
+            <div class="grid" style="margin-top: 5%; margin-bottom: 2%;">
+                <textarea type="text" id="code" name="code" placeholder="Paste the code here" required style="
+     height: 50vh;grid-column: auto / span 2;margin:0; "> 
+
+            </textarea>
+                <div style="margin: 0; padding-right:50px; padding-left: 50px; height: 50vh; background-color:var(--pico-form-element-background-color);border-radius: var(--pico-border-radius); overflow-y: scroll;">
+                  <h1 style="margin-top: 20px;">Settings</h1>
+                  <fieldset>
+                    <label>
+                      <input id ="generalizeFunctions" type="checkbox" role="switch" checked />
+                      Generalize function names
+                    </label>
+                    <label>
+                      <input id ="generalizeVariables" type="checkbox" role="switch" checked />
+                      Generalize variable names
+                    </label>
+                    <label>
+                      <input type="checkbox" id ="generalizeStrings" role="switch" />
+                      Generalize strings
+                    </label>
+                    
+                    <label>
+                      <input type="checkbox" id ="errorRecovery" role="switch" />
+                      Try to recover from errors
+                    </label>
+                    <br>
+                    <label>Replacement Type</label>
+                    <select id="replacementSelection" required>
+                        <option aria-invalid="false" required onselect="">Minify Replacement</option>
+                      <option aria-invalid="false" required onselect="">Simple Replacement</option>
+                    </select>
+                    <label>Return Type</label>
+
+                    <select id="returnTypeSelection" required>
+                      <option aria-invalid="false" required onselect="">Return code</option>
+                      <option aria-invalid="false" required onselect="">Return tokens</option>
+                    </select>
+                    <label>Language</label>
+
+                    <select id="languageSelection" required>
+                      <!--<option selected disabled value="" required aria-invalid="true" >
+                        Language
+                      </option>-->
+                      <option aria-invalid="false" required onselect="">C/C++</option>
+                    </select>
+                  </fieldset>
+                </div>
+              </div>
+              
+          
+            
+            <button class="outline" id="processButton" type="submit" style="width: 30vw;" onclick="processCode()" >Process ⚙️</button>
+
+            <dialog id = "resultado" open style="display:none;">
+                <article>
+                    <h3>Result</h3>
+                    <p id="api-result"></p>                 
+                    <button onclick="closeModal()">OK</button>
+             
+                  </article>
+                </div>
+            </dialog>
+        
+        
+
+
+    
+</body>
+</html>

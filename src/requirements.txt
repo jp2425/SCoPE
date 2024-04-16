@@ -1,0 +1,5 @@
+antlr4-python3-runtime==4.13.1
+antlr4-tools==0.2
+fastapi==0.103.1
+uvicorn>=0.15.0,<0.16.0
+pandarallel==1.6.5
